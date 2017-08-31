@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25EC0BC21F57C98900757EA3 /* pexels-photo-139306.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25EC0BC11F57C98900757EA3 /* pexels-photo-139306.jpg */; };
+		25EC0BCA1F5885B800757EA3 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EC0BC91F5885B800757EA3 /* TableController.swift */; };
 		4B5284162C3FCF41813EFE74 /* Pods_medication_reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99A76BCD6251483082C59DD /* Pods_medication_reminder.framework */; };
 		5B485DE01E7C753D0013B925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B485DDF1E7C753D0013B925 /* AppDelegate.swift */; };
 		5B485DE21E7C753D0013B925 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B485DE11E7C753D0013B925 /* ViewController.swift */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		25EC0BC11F57C98900757EA3 /* pexels-photo-139306.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo-139306.jpg"; sourceTree = "<group>"; };
+		25EC0BC91F5885B800757EA3 /* TableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 		5B485DDC1E7C753D0013B925 /* medication-reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "medication-reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B485DDF1E7C753D0013B925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B485DE11E7C753D0013B925 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,9 +45,54 @@
 		25EC0BC01F57C91D00757EA3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				25EC0BC11F57C98900757EA3 /* pexels-photo-139306.jpg */,
+				25EC0BC61F5883CC00757EA3 /* Etc */,
+				25EC0BC51F5883C200757EA3 /* Sounds */,
+				25EC0BC41F5883AF00757EA3 /* Images */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		25EC0BC41F5883AF00757EA3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		25EC0BC51F5883C200757EA3 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		25EC0BC61F5883CC00757EA3 /* Etc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Etc;
+			sourceTree = "<group>";
+		};
+		25EC0BC71F5883F800757EA3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		25EC0BC81F58858100757EA3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25EC0BC91F5885B800757EA3 /* TableController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		25EC0BCB1F58CA8F00757EA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		5B485DD31E7C753D0013B925 = {
@@ -71,6 +116,9 @@
 		5B485DDE1E7C753D0013B925 /* medication-reminder */ = {
 			isa = PBXGroup;
 			children = (
+				25EC0BCB1F58CA8F00757EA3 /* Models */,
+				25EC0BC81F58858100757EA3 /* Controllers */,
+				25EC0BC71F5883F800757EA3 /* Views */,
 				5B485DDF1E7C753D0013B925 /* AppDelegate.swift */,
 				5B485DE11E7C753D0013B925 /* ViewController.swift */,
 				5B485DE31E7C753D0013B925 /* Main.storyboard */,
@@ -162,7 +210,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B485DEA1E7C753D0013B925 /* LaunchScreen.storyboard in Resources */,
-				25EC0BC21F57C98900757EA3 /* pexels-photo-139306.jpg in Resources */,
 				5B485DE71E7C753D0013B925 /* Assets.xcassets in Resources */,
 				5B485DE51E7C753D0013B925 /* Main.storyboard in Resources */,
 			);
@@ -231,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25EC0BCA1F5885B800757EA3 /* TableController.swift in Sources */,
 				5B485DE21E7C753D0013B925 /* ViewController.swift in Sources */,
 				5B485DE01E7C753D0013B925 /* AppDelegate.swift in Sources */,
 			);

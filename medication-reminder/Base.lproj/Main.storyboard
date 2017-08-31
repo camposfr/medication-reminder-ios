@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +32,7 @@
         <!--Today-->
         <scene sceneID="ENh-Ii-DNR">
             <objects>
-                <viewController id="35h-us-Xid" sceneMemberID="viewController">
+                <viewController id="35h-us-Xid" customClass="TableController" customModule="medication_reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PC5-eZ-dvt"/>
                         <viewControllerLayoutGuide type="bottom" id="W91-Ov-4e4"/>
@@ -39,13 +40,40 @@
                     <view key="view" contentMode="scaleToFill" id="AAy-hN-9gP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WX6-LI-sY1">
+                                <rect key="frame" x="16" y="28" width="343" height="590"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="jnu-gn-XoL">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jnu-gn-XoL" id="TOq-48-QXg">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="35h-us-Xid" id="khk-iB-2pS"/>
+                                    <outlet property="delegate" destination="35h-us-Xid" id="MDF-s9-iDI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W91-Ov-4e4" firstAttribute="top" secondItem="WX6-LI-sY1" secondAttribute="bottom" id="5EQ-m0-NUk"/>
+                            <constraint firstItem="WX6-LI-sY1" firstAttribute="leading" secondItem="AAy-hN-9gP" secondAttribute="leadingMargin" id="7qv-BL-KhN"/>
+                            <constraint firstItem="WX6-LI-sY1" firstAttribute="top" secondItem="PC5-eZ-dvt" secondAttribute="bottom" constant="8" id="SVe-5d-7HR"/>
+                            <constraint firstItem="WX6-LI-sY1" firstAttribute="trailing" secondItem="AAy-hN-9gP" secondAttribute="trailingMargin" id="eTw-EY-zF9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="list-simple-star-7" selectedImage="list-simple-star-7" id="bR3-Vh-Vui"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJi-cQ-Scy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1335" y="-1057"/>
+            <point key="canvasLocation" x="-1335.2" y="-1057.4212893553224"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3DW-CB-c8R">
