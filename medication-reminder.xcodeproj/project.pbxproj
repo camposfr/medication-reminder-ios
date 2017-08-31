@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25EC0BC21F57C98900757EA3 /* pexels-photo-139306.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25EC0BC11F57C98900757EA3 /* pexels-photo-139306.jpg */; };
 		4B5284162C3FCF41813EFE74 /* Pods_medication_reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99A76BCD6251483082C59DD /* Pods_medication_reminder.framework */; };
 		5B485DE01E7C753D0013B925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B485DDF1E7C753D0013B925 /* AppDelegate.swift */; };
 		5B485DE21E7C753D0013B925 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B485DE11E7C753D0013B925 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25EC0BC11F57C98900757EA3 /* pexels-photo-139306.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo-139306.jpg"; sourceTree = "<group>"; };
 		5B485DDC1E7C753D0013B925 /* medication-reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "medication-reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B485DDF1E7C753D0013B925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B485DE11E7C753D0013B925 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25EC0BC01F57C91D00757EA3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				25EC0BC11F57C98900757EA3 /* pexels-photo-139306.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		5B485DD31E7C753D0013B925 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 				5B485DE11E7C753D0013B925 /* ViewController.swift */,
 				5B485DE31E7C753D0013B925 /* Main.storyboard */,
 				5B485DE61E7C753D0013B925 /* Assets.xcassets */,
+				25EC0BC01F57C91D00757EA3 /* Resources */,
 				5B485DE81E7C753D0013B925 /* LaunchScreen.storyboard */,
 				5B485DEB1E7C753D0013B925 /* Info.plist */,
 			);
@@ -151,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B485DEA1E7C753D0013B925 /* LaunchScreen.storyboard in Resources */,
+				25EC0BC21F57C98900757EA3 /* pexels-photo-139306.jpg in Resources */,
 				5B485DE71E7C753D0013B925 /* Assets.xcassets in Resources */,
 				5B485DE51E7C753D0013B925 /* Main.storyboard in Resources */,
 			);
@@ -180,13 +192,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-medication-reminder-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B47BAE084B5919EAB6A52C64 /* [CP] Embed Pods Frameworks */ = {
@@ -195,9 +210,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-medication-reminder/Pods-medication-reminder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -376,6 +396,7 @@
 				5B485DF01E7C753D0013B925 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
