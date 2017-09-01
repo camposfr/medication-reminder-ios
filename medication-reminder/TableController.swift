@@ -30,6 +30,7 @@ class TableController: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        Medications.getDayMeds(start: Date(), end: Date(), status: 1)
 
 
         

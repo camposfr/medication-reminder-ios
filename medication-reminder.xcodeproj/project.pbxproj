@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		25EC0BCA1F5885B800757EA3 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EC0BC91F5885B800757EA3 /* TableController.swift */; };
+		25EC0BCD1F58CEC500757EA3 /* Medications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EC0BCC1F58CEC500757EA3 /* Medications.swift */; };
+		25EC0BCF1F58EC0C00757EA3 /* AlamoREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EC0BCE1F58EC0C00757EA3 /* AlamoREST.swift */; };
+		25EC0BD31F5902F200757EA3 /* medicationreminder_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EC0BD21F5902F200757EA3 /* medicationreminder_intro.png */; };
+		25EC0BD51F59047200757EA3 /* medicationreminder_fondo.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EC0BD41F59047200757EA3 /* medicationreminder_fondo.png */; };
 		4B5284162C3FCF41813EFE74 /* Pods_medication_reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99A76BCD6251483082C59DD /* Pods_medication_reminder.framework */; };
 		5B485DE01E7C753D0013B925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B485DDF1E7C753D0013B925 /* AppDelegate.swift */; };
 		5B485DE21E7C753D0013B925 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B485DE11E7C753D0013B925 /* ViewController.swift */; };
@@ -18,6 +22,10 @@
 
 /* Begin PBXFileReference section */
 		25EC0BC91F5885B800757EA3 /* TableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		25EC0BCC1F58CEC500757EA3 /* Medications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medications.swift; sourceTree = "<group>"; };
+		25EC0BCE1F58EC0C00757EA3 /* AlamoREST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoREST.swift; sourceTree = "<group>"; };
+		25EC0BD21F5902F200757EA3 /* medicationreminder_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medicationreminder_intro.png; sourceTree = "<group>"; };
+		25EC0BD41F59047200757EA3 /* medicationreminder_fondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medicationreminder_fondo.png; sourceTree = "<group>"; };
 		5B485DDC1E7C753D0013B925 /* medication-reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "medication-reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B485DDF1E7C753D0013B925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B485DE11E7C753D0013B925 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +53,7 @@
 		25EC0BC01F57C91D00757EA3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B485DE61E7C753D0013B925 /* Assets.xcassets */,
 				25EC0BC61F5883CC00757EA3 /* Etc */,
 				25EC0BC51F5883C200757EA3 /* Sounds */,
 				25EC0BC41F5883AF00757EA3 /* Images */,
@@ -55,6 +64,8 @@
 		25EC0BC41F5883AF00757EA3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				25EC0BD41F59047200757EA3 /* medicationreminder_fondo.png */,
+				25EC0BD21F5902F200757EA3 /* medicationreminder_intro.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -91,6 +102,8 @@
 		25EC0BCB1F58CA8F00757EA3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				25EC0BCC1F58CEC500757EA3 /* Medications.swift */,
+				25EC0BCE1F58EC0C00757EA3 /* AlamoREST.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -122,7 +135,6 @@
 				5B485DDF1E7C753D0013B925 /* AppDelegate.swift */,
 				5B485DE11E7C753D0013B925 /* ViewController.swift */,
 				5B485DE31E7C753D0013B925 /* Main.storyboard */,
-				5B485DE61E7C753D0013B925 /* Assets.xcassets */,
 				25EC0BC01F57C91D00757EA3 /* Resources */,
 				5B485DE81E7C753D0013B925 /* LaunchScreen.storyboard */,
 				5B485DEB1E7C753D0013B925 /* Info.plist */,
@@ -209,8 +221,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25EC0BD51F59047200757EA3 /* medicationreminder_fondo.png in Resources */,
 				5B485DEA1E7C753D0013B925 /* LaunchScreen.storyboard in Resources */,
 				5B485DE71E7C753D0013B925 /* Assets.xcassets in Resources */,
+				25EC0BD31F5902F200757EA3 /* medicationreminder_intro.png in Resources */,
 				5B485DE51E7C753D0013B925 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25EC0BCF1F58EC0C00757EA3 /* AlamoREST.swift in Sources */,
+				25EC0BCD1F58CEC500757EA3 /* Medications.swift in Sources */,
 				25EC0BCA1F5885B800757EA3 /* TableController.swift in Sources */,
 				5B485DE21E7C753D0013B925 /* ViewController.swift in Sources */,
 				5B485DE01E7C753D0013B925 /* AppDelegate.swift in Sources */,
