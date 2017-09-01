@@ -37,16 +37,14 @@ class Medications
     }
     
     //Class Functions
+    //Getting medication data
     class func getDayMeds(start: Date, end: Date, status: Int)
     {
-        //Getting medication data
         let url: String = "http://localhost:9000/api/medications"
-        
-        
         let params: Parameters =
             [
-                "start": "08/31/2017",
-                "end": "09/01/2017"
+                "start": start.toString(dateFormat: "MM/dd/YYYY"),
+                "end": end.toString(dateFormat: "MM/dd/YYYY")
             ]
         
         Alamofire.request(URL(string: url)!, method: .get, parameters: params).validate().responseJSON
@@ -64,5 +62,40 @@ class Medications
             }
         }
     }
+    
+
+    //Patching medication Id
+    class func patchIdMeds(Id: String)
+    {
+        let url: String = "http://localhost:9000/api/medications/" + Id
+        let temp = Date()
+        
+        let d: Parameters =
+        [
+                "m":temp.toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"),
+                "f":temp.toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z")
+        ]
+        
+        let params: Parameters =
+        [
+                "d": d,
+                "completed": true
+        ]
+        
+        Alamofire.request(URL(string: url)!, method: .patch, parameters: params,encoding: JSONEncoding.default).responseJSON
+        {
+            (response) -> Void in
+            //Print to console for debug
+            if response.result.isSuccess {
+                let resJson = JSON(response.result.value!)
+                print(resJson)
+            }
+            if response.result.isFailure {
+                let error : NSError = response.result.error! as NSError
+                print(error)
+            }
+        }
+    }
+    
     
 }

@@ -163,13 +163,19 @@
                     <view key="view" contentMode="scaleToFill" id="PGk-Ul-L26">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medicationreminder_fondo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Owd-MI-h1N">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="thumb-up-7" selectedImage="thumb-up-7" id="aa0-nz-snd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmC-oF-ZzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-878" y="-211"/>
+            <point key="canvasLocation" x="-879.20000000000005" y="-211.84407796101951"/>
         </scene>
     </scenes>
     <resources>
@@ -177,6 +183,7 @@
         <image name="circle-tick-7" width="30" height="30"/>
         <image name="circle-x-7" width="30" height="30"/>
         <image name="list-simple-star-7" width="30" height="30"/>
+        <image name="medicationreminder_fondo.png" width="1080" height="1920"/>
         <image name="thumb-up-7" width="30" height="30"/>
     </resources>
 </document>
