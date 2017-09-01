@@ -36,9 +36,30 @@ class Medications
         self.active = active
     }
     
+    //Assumes schema
+    init(fromJSON: JSON) {
+        self.missed = false
+        self.id = fromJSON["_id"].string
+        self.name = fromJSON["name"].string
+        self.dosage = fromJSON["dosage"].string
+        if let timeString = fromJSON["time"].string {
+            self.time = timeString
+            //if current time exceeds the medication time + 5 mins, then missed
+
+            }
+        }
+
+    
     //Class Functions
+    
+    
+    class func catchVal(temp: JSON)->JSON
+    {
+        return temp
+    }
+    
     //Getting medication data
-    class func getDayMeds(start: Date, end: Date, status: Int)
+    class func getDayMeds(start: Date, end: Date, status: Int)->JSON
     {
         let url: String = "http://localhost:9000/api/medications"
         let params: Parameters =
@@ -46,7 +67,6 @@ class Medications
                 "start": start.toString(dateFormat: "MM/dd/YYYY"),
                 "end": end.toString(dateFormat: "MM/dd/YYYY")
             ]
-        
         Alamofire.request(URL(string: url)!, method: .get, parameters: params).validate().responseJSON
         {
             (response) -> Void in
@@ -54,13 +74,15 @@ class Medications
             if response.result.isSuccess {
                 let resJson = JSON(response.result.value!)
                 print(resJson)
-                
+                //temp = JSON(response.result.value!)
+
             }
             if response.result.isFailure {
                 let error : NSError = response.result.error! as NSError
                 print(error)
             }
         }
+        return 1
     }
     
 

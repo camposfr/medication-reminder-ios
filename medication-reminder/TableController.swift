@@ -8,8 +8,11 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class TableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+
     
     //Declare variables
     let cellList = ["A", "B", "C"]
