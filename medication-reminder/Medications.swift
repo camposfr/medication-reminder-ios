@@ -9,9 +9,11 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import UserNotifications
 
 
-//Class definition
+
+/// Definition of Class Medications for the user
 class Medications
 {
     //Class atributes
@@ -20,12 +22,21 @@ class Medications
     var missed: Bool?
     var dosage: String?
     var name: String?
-    var time: String?
+    var time: Date?
     var active: Bool?
     var currentDate = Date()
     
-    //Class initialization
-    init (id: String?, finalized: Bool?, missed: Bool?, dosage: String?, name: String?, time: String?, active: Bool?)
+    /// Medications Class initialization
+    ///
+    /// - Parameters:
+    ///   - id: Unique Id
+    ///   - finalized: Is this entry finalized
+    ///   - missed: Is this entry missed
+    ///   - dosage: Dosage for medication
+    ///   - name: Medication Name
+    ///   - time: Time to take Medication
+    ///   - active: Was active
+    init (id: String?, finalized: Bool?, missed: Bool?, dosage: String?, name: String?, time: Date?, active: Bool?)
     {
         self.id = id
         self.finalized = finalized
@@ -34,59 +45,52 @@ class Medications
         self.name = name
         self.time = time
         self.active = active
+        self.missed = Medications.missedCalc(calcDate: self.time!)
     }
-    
-    //Assumes schema
-    init(fromJSON: JSON) {
-        self.missed = false
-        self.id = fromJSON["_id"].string
-        self.name = fromJSON["name"].string
-        self.dosage = fromJSON["dosage"].string
-        if let timeString = fromJSON["time"].string {
-            self.time = timeString
-            //if current time exceeds the medication time + 5 mins, then missed
-
-            }
-        }
 
     
     //Class Functions
     
-    
-    class func catchVal(temp: JSON)->JSON
+    /// Calculates if Medication was missed
+    ///
+    /// - Parameter calcDate: Date of medication to calculate
+    /// - Returns: Returns if Medication was missed
+    class func missedCalc(calcDate:Date)->Bool
     {
-        return temp
-    }
-    
-    //Getting medication data
-    class func getDayMeds(start: Date, end: Date, status: Int)->JSON
-    {
-        let url: String = "http://localhost:9000/api/medications"
-        let params: Parameters =
-            [
-                "start": start.toString(dateFormat: "MM/dd/YYYY"),
-                "end": end.toString(dateFormat: "MM/dd/YYYY")
-            ]
-        Alamofire.request(URL(string: url)!, method: .get, parameters: params).validate().responseJSON
+        //Check if missed
+        let localTime = calcDate
+        let minute:TimeInterval = 60
+        let timeOut = 5 * minute
+        let missedCalc: Bool?
+        if (Date() >  (localTime).addingTimeInterval(timeOut))
         {
-            (response) -> Void in
-            //Print to console for debug
-            if response.result.isSuccess {
-                let resJson = JSON(response.result.value!)
-                print(resJson)
-                //temp = JSON(response.result.value!)
-
-            }
-            if response.result.isFailure {
-                let error : NSError = response.result.error! as NSError
-                print(error)
-            }
+            missedCalc = true
         }
-        return 1
+        else
+        {
+            missedCalc = false
+        }
+        
+        return missedCalc!
+    }
+
+    /// Converts a given String to Date with a format
+    ///
+    /// - Parameter calcDate: The date to convert
+    /// - Returns: Returns the Date with format
+    class func toDate(calcDate:String)->Date
+    {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
+        let time = dateFormatter.date(from: calcDate)
+        return time!
     }
     
 
-    //Patching medication Id
+    /// Patches medication via Id in REST Server
+    ///
+    /// - Parameter Id: Unique Id of Medication
     class func patchIdMeds(Id: String)
     {
         let url: String = "http://localhost:9000/api/medications/" + Id
@@ -94,14 +98,14 @@ class Medications
         
         let d: Parameters =
         [
-                "m":temp.toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"),
-                "f":temp.toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z")
+            "m":temp.toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"),
+            "f":temp.toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z")
         ]
         
         let params: Parameters =
         [
-                "d": d,
-                "completed": true
+            "d": d,
+            "completed": true
         ]
         
         Alamofire.request(URL(string: url)!, method: .patch, parameters: params,encoding: JSONEncoding.default).responseJSON
@@ -118,6 +122,6 @@ class Medications
             }
         }
     }
-    
+        
     
 }
